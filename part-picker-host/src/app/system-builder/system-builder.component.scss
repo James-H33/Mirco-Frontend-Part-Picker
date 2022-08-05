@@ -1,0 +1,40 @@
+.system-builder-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-row .mat-cell {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+tr.mat-row {
+  height: 70px;
+
+  td:last-child {
+    width: 20px;
+  }
+}
+
+.remove {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.system-builder-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+  margin-top: 30px;
+  font-size: 20px;
+}

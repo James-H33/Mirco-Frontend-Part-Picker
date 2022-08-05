@@ -1,0 +1,41 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "picker-lib": {
+      "projectType": "library",
+      "root": "projects/picker-lib",
+      "sourceRoot": "projects/picker-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/picker-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/picker-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/picker-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/picker-lib/src/test.ts",
+            "tsConfig": "projects/picker-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/picker-lib/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

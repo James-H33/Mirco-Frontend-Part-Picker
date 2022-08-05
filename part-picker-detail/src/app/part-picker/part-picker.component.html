@@ -1,0 +1,64 @@
+<div class="part-picker">
+  <h3>
+    <ng-container *ngIf="parts.length">
+      Parts: {{id}}
+    </ng-container>
+
+    <ng-container *ngIf="!parts.length">
+      <app-skeleton [style]="{ height: '20px', width: '100px' }"></app-skeleton>
+    </ng-container>
+  </h3>
+
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Price</th>
+      <th></th>
+    </thead>
+
+    <tbody>
+      <ng-container *ngIf="parts.length">
+        <tr *ngFor="let part of parts">
+          <td>
+            <div class="part-picker-name" >
+              <img [src]="part.image" [alt]="part.name">
+              <div>
+                {{part.name}}
+              </div>
+            </div>
+          </td>
+
+          <td>${{part.price}}</td>
+          <td>
+            <button (click)="updatePart(part)">
+              Add
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+
+      <ng-container *ngIf="!parts.length">
+        <tr *ngFor="let item of loaders">
+          <td>
+            <div class="part-picker-name" >
+              <app-skeleton [style]="{ height: '50px', width: '50px' }"></app-skeleton>
+
+              <div>
+                <app-skeleton [style]="{ height: '18px', width: '100px' }"></app-skeleton>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <app-skeleton [style]="{ height: '25px', width: '35px' }"></app-skeleton>
+          </td>
+
+          <td>
+            <app-skeleton [style]="{ height: '25px', width: '35px' }"></app-skeleton>
+          </td>
+        </tr>
+      </ng-container>
+
+    </tbody>
+  </table>
+</div>
